@@ -9,7 +9,6 @@ TagManager:
   - RewardArea
   - LevelController
   - Console
-  - Waypoint
   layers:
   - Default
   - TransparentFX

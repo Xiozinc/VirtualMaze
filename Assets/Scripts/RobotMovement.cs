@@ -145,12 +145,21 @@ public class RobotMovement : ConfigurableComponent {
     /// 
     /// </summary>
     /// <param name="waypoint"></param>
-    public void RandomiseDirection(Transform waypoint)
+    public void RandomiseWaypointDirection(Transform waypoint)
     {
+
+        Vector3 startpos = waypoint.position;
+        //do not want to change y axis of robot
+        startpos.y = transform.position.y;
+
+        transform.position = startpos;
+
         int y_rotation = Random.Range(0, 360);
-        //Vector3 v = transform.rotation.eulerAngles;
-        //transform.rotation = Quaternion.Euler(v.x, y_rotation, v.z);
-        transform.Rotate(0.0f, y_rotation, 0.0f, Space.Self);
+        Quaternion startrot = transform.rotation;
+        startrot.y = waypoint.rotation.y;
+        transform.rotation = startrot;
+        Vector3 v = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(v.x, y_rotation, v.z);
 
         OnRobotMoved?.Invoke(transform);
     }
@@ -169,7 +178,7 @@ public class RobotMovement : ConfigurableComponent {
         transform.position = startpos;
 
         Quaternion startrot = transform.rotation;
-        startrot = waypoint.rotation;
+        startrot.y = waypoint.rotation.y;
         transform.rotation = startrot;
 
         OnRobotMoved?.Invoke(transform);
@@ -241,11 +250,6 @@ public class RobotMovement : ConfigurableComponent {
         Quaternion newrot = Quaternion.Euler(orientation);
 
         robot.SetPositionAndRotation(pos, newrot);
-    }
-
-    public Transform getRobotTransform()
-    {
-        return transform;
     }
 }
 
