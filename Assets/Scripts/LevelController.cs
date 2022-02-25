@@ -283,7 +283,7 @@ public class LevelController : MonoBehaviour {
 
         }
 
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         yield return FadeCanvas.fadeCanvas.AutoFadeOut();
 
         //double check
@@ -340,7 +340,7 @@ public class LevelController : MonoBehaviour {
         cueController.ShowCue();
         onSessionTrigger.Invoke(SessionTrigger.TrialStartedTrigger, targetIndex);
 
-        yield return new WaitForSecondsRealtime(2f); //Original Cue Timing: 1f (1 second)
+        yield return new WaitForSecondsRealtime(1f); //Original Cue Timing: 1f (1 second)
 
         cueController.HideCue();
         cueController.ShowHint();
