@@ -26,6 +26,6 @@ The dropdown allows you to jump to any trials available in the loaded file.
 To record a trial, Click the *Record Current Trial* button. VirtualMaze will then playback the current trial for recording. Allow the playback to complete and a .mp4 file will be saved to the location stated in the *Video Save Location*.
 
 #### Note:
-Mac Users may encounter Error "Missing DLL library"
-Other possible reason for error could caused by corrupted VisualStudioRedistributable
-DO NOT have the CSV file open when attempting to replay data. Error prompt "Shared Pathway violation"
+* Mac Users may encounter Error "Missing DLL library"
+* Other possible reason for error could caused by corrupted VisualStudioRedistributable
+* DO NOT have the CSV file open when attempting to replay data. Error prompt "Shared Pathway violation"
