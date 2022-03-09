@@ -33,7 +33,6 @@ public class NonTargetRaycast : MonoBehaviour
     private bool Flag17;
     private bool Flag18;
     private float timer = 1000f;
-    public bool disableHint = true;
     //public static string cueImage { get; private set; }
 
     [SerializeField]
@@ -56,7 +55,7 @@ public class NonTargetRaycast : MonoBehaviour
         }*/
 
         // Checks if a session is currently running
-        if (LevelController.sessionStarted && !disableHint)
+        if (LevelController.sessionStarted)
         {
             Shoot();
             HintBlink();
